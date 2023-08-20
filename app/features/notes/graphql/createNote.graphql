@@ -1,0 +1,10 @@
+mutation CreateNote($objects: [NoteInsertInput!]!) {
+  insertIntoNoteCollection(objects: $objects) {
+    affectedCount
+    records {
+      id
+      title
+      body
+    }
+  }
+}

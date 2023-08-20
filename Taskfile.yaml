@@ -1,0 +1,29 @@
+version: 3.0
+
+dotenv:
+  - .end
+
+tasks:
+  bootstrap:
+    - task: db:prepare-migration
+    - task: db:deploy-migration
+    - task: db:generate-prisma
+    # - task: db:generate-graphql
+  db:prepare-migration:
+    cmds:
+      - npm run db:prepare-migration
+  db:deploy-migration:
+    cmds:
+      - npm run db:deploy-migration
+  db:generate-prisma:
+    cmds:
+      - npm run setup:db
+  db:generate-graphql:
+    cmds:
+      - npm run generate:graphql
+  build:
+    cmds:
+      - npm run build
+  dev:
+    cmds:
+      - npm run dev

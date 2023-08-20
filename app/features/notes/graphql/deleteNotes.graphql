@@ -1,0 +1,7 @@
+mutation DeleteNotes($ids: [UUID!]!, $userId: UUID!) {
+  deleteFromNoteCollection(
+    filter: { id: { in: $ids }, user_id: { eq: $userId } }
+  ) {
+    affectedCount
+  }
+}

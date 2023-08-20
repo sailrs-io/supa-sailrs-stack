@@ -1,0 +1,11 @@
+query GetNoteById($id: UUID!, $userId: UUID!) {
+  noteCollection(filter: { id: { eq: $id }, user_id: { eq: $userId } }) {
+    edges {
+      node {
+        id
+        title
+        body
+      }
+    }
+  }
+}
