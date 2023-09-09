@@ -1,7 +1,6 @@
 import type { z } from "zod";
 
-import type { CreateNoteMutation } from "~/integrations/graphql";
-import { CreateNoteDocument, client } from "~/integrations/graphql";
+import { client } from "~/integrations/graphql";
 import type { CreateNoteFormSchema } from "~/view/notes/CreateNoteForm";
 
 type CreateNoteArgs = z.infer<typeof CreateNoteFormSchema> & {
@@ -9,15 +8,8 @@ type CreateNoteArgs = z.infer<typeof CreateNoteFormSchema> & {
 };
 
 export async function createNote(args: CreateNoteArgs) {
-  const { data: result } = await client.mutate<CreateNoteMutation>({
-    mutation: CreateNoteDocument,
-    variables: {
-      objects: [
-        {
-          ...args,
-        },
-      ],
-    },
+  const result = await client.CreateNote({
+    objects: args,
   });
   return result?.insertIntoNoteCollection?.records[0];
 }

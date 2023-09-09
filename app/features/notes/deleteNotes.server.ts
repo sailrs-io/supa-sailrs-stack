@@ -1,5 +1,4 @@
-import type { DeleteNotesMutation } from "~/integrations/graphql";
-import { DeleteNotesDocument, client } from "~/integrations/graphql";
+import { client } from "~/integrations/graphql";
 
 type DeleteNotesArgs = {
   ids: string[];
@@ -7,11 +6,8 @@ type DeleteNotesArgs = {
 };
 
 export async function deleteNotes(args: DeleteNotesArgs) {
-  const { data } = await client.mutate<DeleteNotesMutation>({
-    mutation: DeleteNotesDocument,
-    variables: {
-      ...args,
-    },
+  const result = await client.DeleteNotes({
+    ...args,
   });
-  return data?.deleteFromNoteCollection?.affectedCount || 0;
+  return result?.deleteFromNoteCollection?.affectedCount || 0;
 }

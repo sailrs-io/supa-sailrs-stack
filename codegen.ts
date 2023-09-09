@@ -18,17 +18,12 @@ const config: CodegenConfig = {
       plugins: [
         "typescript",
         "typescript-operations",
-        "@graphql-codegen/typescript-generic-sdk",
+        "typescript-graphql-request",
       ],
       config: {
-        scalars: {
-          JSONString: "string",
-          UUID: "string",
-          Metadata: "Record<string, string>",
-          DateTime: "string",
-        },
         dedupeOperationSuffix: true,
         enumsAsTypes: true,
+        avoidOptionals: true,
       },
     },
     "graphql.schema.json": {
