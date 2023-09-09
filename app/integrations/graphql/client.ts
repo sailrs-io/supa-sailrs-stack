@@ -1,12 +1,17 @@
-import { ApolloClient, InMemoryCache } from "@apollo/client";
+import { GraphQLClient } from "graphql-request";
 
 import { SUPABASE_ANON_PUBLIC, SUPABASE_URL } from "~/utils/env";
 
-export const client = new ApolloClient({
-  uri: `${SUPABASE_URL}/graphql/v1`,
-  cache: new InMemoryCache(),
+import { getSdk } from "./types";
+
+/**
+ * Enabled you to query a graphql endpoint
+ */
+const _client = new GraphQLClient(`${SUPABASE_URL}/graphql/v1`, {
   headers: {
-    apiKey: `${SUPABASE_ANON_PUBLIC}`,
     Authorization: `Bearer ${SUPABASE_ANON_PUBLIC}`,
+    apiKey: SUPABASE_ANON_PUBLIC,
   },
 });
+
+export const client = getSdk(_client);

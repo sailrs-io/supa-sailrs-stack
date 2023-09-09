@@ -1,4 +1,5 @@
-import { DocumentNode } from 'graphql';
+import { GraphQLClient } from 'graphql-request';
+import { GraphQLClientRequestHeaders } from 'graphql-request/build/cjs/types';
 import gql from 'graphql-tag';
 export type Maybe<T> = T | null;
 export type InputMaybe<T> = Maybe<T>;
@@ -20,61 +21,61 @@ export type Scalars = {
   JSON: any;
   Opaque: any;
   Time: any;
-  UUID: string;
+  UUID: any;
 };
 
 /** Boolean expression comparing fields on type "BigFloat" */
 export type BigFloatFilter = {
-  eq?: InputMaybe<Scalars['BigFloat']>;
-  gt?: InputMaybe<Scalars['BigFloat']>;
-  gte?: InputMaybe<Scalars['BigFloat']>;
-  in?: InputMaybe<Array<Scalars['BigFloat']>>;
-  is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['BigFloat']>;
-  lte?: InputMaybe<Scalars['BigFloat']>;
-  neq?: InputMaybe<Scalars['BigFloat']>;
+  eq: InputMaybe<Scalars['BigFloat']>;
+  gt: InputMaybe<Scalars['BigFloat']>;
+  gte: InputMaybe<Scalars['BigFloat']>;
+  in: InputMaybe<Array<Scalars['BigFloat']>>;
+  is: InputMaybe<FilterIs>;
+  lt: InputMaybe<Scalars['BigFloat']>;
+  lte: InputMaybe<Scalars['BigFloat']>;
+  neq: InputMaybe<Scalars['BigFloat']>;
 };
 
 /** Boolean expression comparing fields on type "BigInt" */
 export type BigIntFilter = {
-  eq?: InputMaybe<Scalars['BigInt']>;
-  gt?: InputMaybe<Scalars['BigInt']>;
-  gte?: InputMaybe<Scalars['BigInt']>;
-  in?: InputMaybe<Array<Scalars['BigInt']>>;
-  is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['BigInt']>;
-  lte?: InputMaybe<Scalars['BigInt']>;
-  neq?: InputMaybe<Scalars['BigInt']>;
+  eq: InputMaybe<Scalars['BigInt']>;
+  gt: InputMaybe<Scalars['BigInt']>;
+  gte: InputMaybe<Scalars['BigInt']>;
+  in: InputMaybe<Array<Scalars['BigInt']>>;
+  is: InputMaybe<FilterIs>;
+  lt: InputMaybe<Scalars['BigInt']>;
+  lte: InputMaybe<Scalars['BigInt']>;
+  neq: InputMaybe<Scalars['BigInt']>;
 };
 
 /** Boolean expression comparing fields on type "Boolean" */
 export type BooleanFilter = {
-  eq?: InputMaybe<Scalars['Boolean']>;
-  is?: InputMaybe<FilterIs>;
+  eq: InputMaybe<Scalars['Boolean']>;
+  is: InputMaybe<FilterIs>;
 };
 
 /** Boolean expression comparing fields on type "Date" */
 export type DateFilter = {
-  eq?: InputMaybe<Scalars['Date']>;
-  gt?: InputMaybe<Scalars['Date']>;
-  gte?: InputMaybe<Scalars['Date']>;
-  in?: InputMaybe<Array<Scalars['Date']>>;
-  is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Date']>;
-  lte?: InputMaybe<Scalars['Date']>;
-  neq?: InputMaybe<Scalars['Date']>;
+  eq: InputMaybe<Scalars['Date']>;
+  gt: InputMaybe<Scalars['Date']>;
+  gte: InputMaybe<Scalars['Date']>;
+  in: InputMaybe<Array<Scalars['Date']>>;
+  is: InputMaybe<FilterIs>;
+  lt: InputMaybe<Scalars['Date']>;
+  lte: InputMaybe<Scalars['Date']>;
+  neq: InputMaybe<Scalars['Date']>;
 };
 
 /** Boolean expression comparing fields on type "Datetime" */
 export type DatetimeFilter = {
-  eq?: InputMaybe<Scalars['Datetime']>;
-  gt?: InputMaybe<Scalars['Datetime']>;
-  gte?: InputMaybe<Scalars['Datetime']>;
-  in?: InputMaybe<Array<Scalars['Datetime']>>;
-  is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Datetime']>;
-  lte?: InputMaybe<Scalars['Datetime']>;
-  neq?: InputMaybe<Scalars['Datetime']>;
+  eq: InputMaybe<Scalars['Datetime']>;
+  gt: InputMaybe<Scalars['Datetime']>;
+  gte: InputMaybe<Scalars['Datetime']>;
+  in: InputMaybe<Array<Scalars['Datetime']>>;
+  is: InputMaybe<FilterIs>;
+  lt: InputMaybe<Scalars['Datetime']>;
+  lte: InputMaybe<Scalars['Datetime']>;
+  neq: InputMaybe<Scalars['Datetime']>;
 };
 
 export type FilterIs =
@@ -83,31 +84,31 @@ export type FilterIs =
 
 /** Boolean expression comparing fields on type "Float" */
 export type FloatFilter = {
-  eq?: InputMaybe<Scalars['Float']>;
-  gt?: InputMaybe<Scalars['Float']>;
-  gte?: InputMaybe<Scalars['Float']>;
-  in?: InputMaybe<Array<Scalars['Float']>>;
-  is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Float']>;
-  lte?: InputMaybe<Scalars['Float']>;
-  neq?: InputMaybe<Scalars['Float']>;
+  eq: InputMaybe<Scalars['Float']>;
+  gt: InputMaybe<Scalars['Float']>;
+  gte: InputMaybe<Scalars['Float']>;
+  in: InputMaybe<Array<Scalars['Float']>>;
+  is: InputMaybe<FilterIs>;
+  lt: InputMaybe<Scalars['Float']>;
+  lte: InputMaybe<Scalars['Float']>;
+  neq: InputMaybe<Scalars['Float']>;
 };
 
 /** Boolean expression comparing fields on type "ID" */
 export type IdFilter = {
-  eq?: InputMaybe<Scalars['ID']>;
+  eq: InputMaybe<Scalars['ID']>;
 };
 
 /** Boolean expression comparing fields on type "Int" */
 export type IntFilter = {
-  eq?: InputMaybe<Scalars['Int']>;
-  gt?: InputMaybe<Scalars['Int']>;
-  gte?: InputMaybe<Scalars['Int']>;
-  in?: InputMaybe<Array<Scalars['Int']>>;
-  is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Int']>;
-  lte?: InputMaybe<Scalars['Int']>;
-  neq?: InputMaybe<Scalars['Int']>;
+  eq: InputMaybe<Scalars['Int']>;
+  gt: InputMaybe<Scalars['Int']>;
+  gte: InputMaybe<Scalars['Int']>;
+  in: InputMaybe<Array<Scalars['Int']>>;
+  is: InputMaybe<FilterIs>;
+  lt: InputMaybe<Scalars['Int']>;
+  lte: InputMaybe<Scalars['Int']>;
+  neq: InputMaybe<Scalars['Int']>;
 };
 
 /** The root type for creating and mutating data */
@@ -120,11 +121,11 @@ export type Mutation = {
   /** Deletes zero or more records from the `_prisma_migrations` collection */
   deleteFrom_prisma_migrationsCollection: _Prisma_MigrationsDeleteResponse;
   /** Adds one or more `Note` records to the collection */
-  insertIntoNoteCollection?: Maybe<NoteInsertResponse>;
+  insertIntoNoteCollection: Maybe<NoteInsertResponse>;
   /** Adds one or more `User` records to the collection */
-  insertIntoUserCollection?: Maybe<UserInsertResponse>;
+  insertIntoUserCollection: Maybe<UserInsertResponse>;
   /** Adds one or more `_prisma_migrations` records to the collection */
-  insertInto_prisma_migrationsCollection?: Maybe<_Prisma_MigrationsInsertResponse>;
+  insertInto_prisma_migrationsCollection: Maybe<_Prisma_MigrationsInsertResponse>;
   /** Updates zero or more records in the `Note` collection */
   updateNoteCollection: NoteUpdateResponse;
   /** Updates zero or more records in the `User` collection */
@@ -137,21 +138,21 @@ export type Mutation = {
 /** The root type for creating and mutating data */
 export type MutationDeleteFromNoteCollectionArgs = {
   atMost?: Scalars['Int'];
-  filter?: InputMaybe<NoteFilter>;
+  filter: InputMaybe<NoteFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFromUserCollectionArgs = {
   atMost?: Scalars['Int'];
-  filter?: InputMaybe<UserFilter>;
+  filter: InputMaybe<UserFilter>;
 };
 
 
 /** The root type for creating and mutating data */
 export type MutationDeleteFrom_Prisma_MigrationsCollectionArgs = {
   atMost?: Scalars['Int'];
-  filter?: InputMaybe<_Prisma_MigrationsFilter>;
+  filter: InputMaybe<_Prisma_MigrationsFilter>;
 };
 
 
@@ -176,7 +177,7 @@ export type MutationInsertInto_Prisma_MigrationsCollectionArgs = {
 /** The root type for creating and mutating data */
 export type MutationUpdateNoteCollectionArgs = {
   atMost?: Scalars['Int'];
-  filter?: InputMaybe<NoteFilter>;
+  filter: InputMaybe<NoteFilter>;
   set: NoteUpdateInput;
 };
 
@@ -184,7 +185,7 @@ export type MutationUpdateNoteCollectionArgs = {
 /** The root type for creating and mutating data */
 export type MutationUpdateUserCollectionArgs = {
   atMost?: Scalars['Int'];
-  filter?: InputMaybe<UserFilter>;
+  filter: InputMaybe<UserFilter>;
   set: UserUpdateInput;
 };
 
@@ -192,7 +193,7 @@ export type MutationUpdateUserCollectionArgs = {
 /** The root type for creating and mutating data */
 export type MutationUpdate_Prisma_MigrationsCollectionArgs = {
   atMost?: Scalars['Int'];
-  filter?: InputMaybe<_Prisma_MigrationsFilter>;
+  filter: InputMaybe<_Prisma_MigrationsFilter>;
   set: _Prisma_MigrationsUpdateInput;
 };
 
@@ -209,7 +210,7 @@ export type Note = Node & {
   /** Globally Unique Record Identifier */
   nodeId: Scalars['ID'];
   title: Scalars['String'];
-  updated_at?: Maybe<Scalars['Datetime']>;
+  updated_at: Maybe<Scalars['Datetime']>;
   user: User;
   user_id: Scalars['UUID'];
 };
@@ -235,22 +236,22 @@ export type NoteEdge = {
 };
 
 export type NoteFilter = {
-  body?: InputMaybe<StringFilter>;
-  created_at?: InputMaybe<DatetimeFilter>;
-  id?: InputMaybe<UuidFilter>;
-  nodeId?: InputMaybe<IdFilter>;
-  title?: InputMaybe<StringFilter>;
-  updated_at?: InputMaybe<DatetimeFilter>;
-  user_id?: InputMaybe<UuidFilter>;
+  body: InputMaybe<StringFilter>;
+  created_at: InputMaybe<DatetimeFilter>;
+  id: InputMaybe<UuidFilter>;
+  nodeId: InputMaybe<IdFilter>;
+  title: InputMaybe<StringFilter>;
+  updated_at: InputMaybe<DatetimeFilter>;
+  user_id: InputMaybe<UuidFilter>;
 };
 
 export type NoteInsertInput = {
-  body?: InputMaybe<Scalars['String']>;
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  title?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
-  user_id?: InputMaybe<Scalars['UUID']>;
+  body: InputMaybe<Scalars['String']>;
+  created_at: InputMaybe<Scalars['Datetime']>;
+  id: InputMaybe<Scalars['UUID']>;
+  title: InputMaybe<Scalars['String']>;
+  updated_at: InputMaybe<Scalars['Datetime']>;
+  user_id: InputMaybe<Scalars['UUID']>;
 };
 
 export type NoteInsertResponse = {
@@ -262,21 +263,21 @@ export type NoteInsertResponse = {
 };
 
 export type NoteOrderBy = {
-  body?: InputMaybe<OrderByDirection>;
-  created_at?: InputMaybe<OrderByDirection>;
-  id?: InputMaybe<OrderByDirection>;
-  title?: InputMaybe<OrderByDirection>;
-  updated_at?: InputMaybe<OrderByDirection>;
-  user_id?: InputMaybe<OrderByDirection>;
+  body: InputMaybe<OrderByDirection>;
+  created_at: InputMaybe<OrderByDirection>;
+  id: InputMaybe<OrderByDirection>;
+  title: InputMaybe<OrderByDirection>;
+  updated_at: InputMaybe<OrderByDirection>;
+  user_id: InputMaybe<OrderByDirection>;
 };
 
 export type NoteUpdateInput = {
-  body?: InputMaybe<Scalars['String']>;
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  title?: InputMaybe<Scalars['String']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
-  user_id?: InputMaybe<Scalars['UUID']>;
+  body: InputMaybe<Scalars['String']>;
+  created_at: InputMaybe<Scalars['Datetime']>;
+  id: InputMaybe<Scalars['UUID']>;
+  title: InputMaybe<Scalars['String']>;
+  updated_at: InputMaybe<Scalars['Datetime']>;
+  user_id: InputMaybe<Scalars['UUID']>;
 };
 
 export type NoteUpdateResponse = {
@@ -289,8 +290,8 @@ export type NoteUpdateResponse = {
 
 /** Boolean expression comparing fields on type "Opaque" */
 export type OpaqueFilter = {
-  eq?: InputMaybe<Scalars['Opaque']>;
-  is?: InputMaybe<FilterIs>;
+  eq: InputMaybe<Scalars['Opaque']>;
+  is: InputMaybe<FilterIs>;
 };
 
 /** Defines a per-field sorting order */
@@ -306,34 +307,34 @@ export type OrderByDirection =
 
 export type PageInfo = {
   __typename?: 'PageInfo';
-  endCursor?: Maybe<Scalars['String']>;
+  endCursor: Maybe<Scalars['String']>;
   hasNextPage: Scalars['Boolean'];
   hasPreviousPage: Scalars['Boolean'];
-  startCursor?: Maybe<Scalars['String']>;
+  startCursor: Maybe<Scalars['String']>;
 };
 
 /** The root type for querying data */
 export type Query = {
   __typename?: 'Query';
   /** A pagable collection of type `_prisma_migrations` */
-  _prisma_migrationsCollection?: Maybe<_Prisma_MigrationsConnection>;
+  _prisma_migrationsCollection: Maybe<_Prisma_MigrationsConnection>;
   /** Retrieve a record by its `ID` */
-  node?: Maybe<Node>;
+  node: Maybe<Node>;
   /** A pagable collection of type `Note` */
-  noteCollection?: Maybe<NoteConnection>;
+  noteCollection: Maybe<NoteConnection>;
   /** A pagable collection of type `User` */
-  userCollection?: Maybe<UserConnection>;
+  userCollection: Maybe<UserConnection>;
 };
 
 
 /** The root type for querying data */
 export type Query_Prisma_MigrationsCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
-  filter?: InputMaybe<_Prisma_MigrationsFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
-  orderBy?: InputMaybe<Array<_Prisma_MigrationsOrderBy>>;
+  after: InputMaybe<Scalars['Cursor']>;
+  before: InputMaybe<Scalars['Cursor']>;
+  filter: InputMaybe<_Prisma_MigrationsFilter>;
+  first: InputMaybe<Scalars['Int']>;
+  last: InputMaybe<Scalars['Int']>;
+  orderBy: InputMaybe<Array<_Prisma_MigrationsOrderBy>>;
 };
 
 
@@ -345,60 +346,60 @@ export type QueryNodeArgs = {
 
 /** The root type for querying data */
 export type QueryNoteCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
-  filter?: InputMaybe<NoteFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
-  orderBy?: InputMaybe<Array<NoteOrderBy>>;
+  after: InputMaybe<Scalars['Cursor']>;
+  before: InputMaybe<Scalars['Cursor']>;
+  filter: InputMaybe<NoteFilter>;
+  first: InputMaybe<Scalars['Int']>;
+  last: InputMaybe<Scalars['Int']>;
+  orderBy: InputMaybe<Array<NoteOrderBy>>;
 };
 
 
 /** The root type for querying data */
 export type QueryUserCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
-  filter?: InputMaybe<UserFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
-  orderBy?: InputMaybe<Array<UserOrderBy>>;
+  after: InputMaybe<Scalars['Cursor']>;
+  before: InputMaybe<Scalars['Cursor']>;
+  filter: InputMaybe<UserFilter>;
+  first: InputMaybe<Scalars['Int']>;
+  last: InputMaybe<Scalars['Int']>;
+  orderBy: InputMaybe<Array<UserOrderBy>>;
 };
 
 /** Boolean expression comparing fields on type "String" */
 export type StringFilter = {
-  eq?: InputMaybe<Scalars['String']>;
-  gt?: InputMaybe<Scalars['String']>;
-  gte?: InputMaybe<Scalars['String']>;
-  ilike?: InputMaybe<Scalars['String']>;
-  in?: InputMaybe<Array<Scalars['String']>>;
-  iregex?: InputMaybe<Scalars['String']>;
-  is?: InputMaybe<FilterIs>;
-  like?: InputMaybe<Scalars['String']>;
-  lt?: InputMaybe<Scalars['String']>;
-  lte?: InputMaybe<Scalars['String']>;
-  neq?: InputMaybe<Scalars['String']>;
-  regex?: InputMaybe<Scalars['String']>;
-  startsWith?: InputMaybe<Scalars['String']>;
+  eq: InputMaybe<Scalars['String']>;
+  gt: InputMaybe<Scalars['String']>;
+  gte: InputMaybe<Scalars['String']>;
+  ilike: InputMaybe<Scalars['String']>;
+  in: InputMaybe<Array<Scalars['String']>>;
+  iregex: InputMaybe<Scalars['String']>;
+  is: InputMaybe<FilterIs>;
+  like: InputMaybe<Scalars['String']>;
+  lt: InputMaybe<Scalars['String']>;
+  lte: InputMaybe<Scalars['String']>;
+  neq: InputMaybe<Scalars['String']>;
+  regex: InputMaybe<Scalars['String']>;
+  startsWith: InputMaybe<Scalars['String']>;
 };
 
 /** Boolean expression comparing fields on type "Time" */
 export type TimeFilter = {
-  eq?: InputMaybe<Scalars['Time']>;
-  gt?: InputMaybe<Scalars['Time']>;
-  gte?: InputMaybe<Scalars['Time']>;
-  in?: InputMaybe<Array<Scalars['Time']>>;
-  is?: InputMaybe<FilterIs>;
-  lt?: InputMaybe<Scalars['Time']>;
-  lte?: InputMaybe<Scalars['Time']>;
-  neq?: InputMaybe<Scalars['Time']>;
+  eq: InputMaybe<Scalars['Time']>;
+  gt: InputMaybe<Scalars['Time']>;
+  gte: InputMaybe<Scalars['Time']>;
+  in: InputMaybe<Array<Scalars['Time']>>;
+  is: InputMaybe<FilterIs>;
+  lt: InputMaybe<Scalars['Time']>;
+  lte: InputMaybe<Scalars['Time']>;
+  neq: InputMaybe<Scalars['Time']>;
 };
 
 /** Boolean expression comparing fields on type "UUID" */
 export type UuidFilter = {
-  eq?: InputMaybe<Scalars['UUID']>;
-  in?: InputMaybe<Array<Scalars['UUID']>>;
-  is?: InputMaybe<FilterIs>;
-  neq?: InputMaybe<Scalars['UUID']>;
+  eq: InputMaybe<Scalars['UUID']>;
+  in: InputMaybe<Array<Scalars['UUID']>>;
+  is: InputMaybe<FilterIs>;
+  neq: InputMaybe<Scalars['UUID']>;
 };
 
 export type User = Node & {
@@ -408,18 +409,18 @@ export type User = Node & {
   id: Scalars['UUID'];
   /** Globally Unique Record Identifier */
   nodeId: Scalars['ID'];
-  noteCollection?: Maybe<NoteConnection>;
-  updated_at?: Maybe<Scalars['Datetime']>;
+  noteCollection: Maybe<NoteConnection>;
+  updated_at: Maybe<Scalars['Datetime']>;
 };
 
 
 export type UserNoteCollectionArgs = {
-  after?: InputMaybe<Scalars['Cursor']>;
-  before?: InputMaybe<Scalars['Cursor']>;
-  filter?: InputMaybe<NoteFilter>;
-  first?: InputMaybe<Scalars['Int']>;
-  last?: InputMaybe<Scalars['Int']>;
-  orderBy?: InputMaybe<Array<NoteOrderBy>>;
+  after: InputMaybe<Scalars['Cursor']>;
+  before: InputMaybe<Scalars['Cursor']>;
+  filter: InputMaybe<NoteFilter>;
+  first: InputMaybe<Scalars['Int']>;
+  last: InputMaybe<Scalars['Int']>;
+  orderBy: InputMaybe<Array<NoteOrderBy>>;
 };
 
 export type UserConnection = {
@@ -443,18 +444,18 @@ export type UserEdge = {
 };
 
 export type UserFilter = {
-  created_at?: InputMaybe<DatetimeFilter>;
-  email?: InputMaybe<StringFilter>;
-  id?: InputMaybe<UuidFilter>;
-  nodeId?: InputMaybe<IdFilter>;
-  updated_at?: InputMaybe<DatetimeFilter>;
+  created_at: InputMaybe<DatetimeFilter>;
+  email: InputMaybe<StringFilter>;
+  id: InputMaybe<UuidFilter>;
+  nodeId: InputMaybe<IdFilter>;
+  updated_at: InputMaybe<DatetimeFilter>;
 };
 
 export type UserInsertInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  email?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at: InputMaybe<Scalars['Datetime']>;
+  email: InputMaybe<Scalars['String']>;
+  id: InputMaybe<Scalars['UUID']>;
+  updated_at: InputMaybe<Scalars['Datetime']>;
 };
 
 export type UserInsertResponse = {
@@ -466,17 +467,17 @@ export type UserInsertResponse = {
 };
 
 export type UserOrderBy = {
-  created_at?: InputMaybe<OrderByDirection>;
-  email?: InputMaybe<OrderByDirection>;
-  id?: InputMaybe<OrderByDirection>;
-  updated_at?: InputMaybe<OrderByDirection>;
+  created_at: InputMaybe<OrderByDirection>;
+  email: InputMaybe<OrderByDirection>;
+  id: InputMaybe<OrderByDirection>;
+  updated_at: InputMaybe<OrderByDirection>;
 };
 
 export type UserUpdateInput = {
-  created_at?: InputMaybe<Scalars['Datetime']>;
-  email?: InputMaybe<Scalars['String']>;
-  id?: InputMaybe<Scalars['UUID']>;
-  updated_at?: InputMaybe<Scalars['Datetime']>;
+  created_at: InputMaybe<Scalars['Datetime']>;
+  email: InputMaybe<Scalars['String']>;
+  id: InputMaybe<Scalars['UUID']>;
+  updated_at: InputMaybe<Scalars['Datetime']>;
 };
 
 export type UserUpdateResponse = {
@@ -491,13 +492,13 @@ export type _Prisma_Migrations = Node & {
   __typename?: '_prisma_migrations';
   applied_steps_count: Scalars['Int'];
   checksum: Scalars['String'];
-  finished_at?: Maybe<Scalars['Datetime']>;
+  finished_at: Maybe<Scalars['Datetime']>;
   id: Scalars['String'];
-  logs?: Maybe<Scalars['String']>;
+  logs: Maybe<Scalars['String']>;
   migration_name: Scalars['String'];
   /** Globally Unique Record Identifier */
   nodeId: Scalars['ID'];
-  rolled_back_at?: Maybe<Scalars['Datetime']>;
+  rolled_back_at: Maybe<Scalars['Datetime']>;
   started_at: Scalars['Datetime'];
 };
 
@@ -522,26 +523,26 @@ export type _Prisma_MigrationsEdge = {
 };
 
 export type _Prisma_MigrationsFilter = {
-  applied_steps_count?: InputMaybe<IntFilter>;
-  checksum?: InputMaybe<StringFilter>;
-  finished_at?: InputMaybe<DatetimeFilter>;
-  id?: InputMaybe<StringFilter>;
-  logs?: InputMaybe<StringFilter>;
-  migration_name?: InputMaybe<StringFilter>;
-  nodeId?: InputMaybe<IdFilter>;
-  rolled_back_at?: InputMaybe<DatetimeFilter>;
-  started_at?: InputMaybe<DatetimeFilter>;
+  applied_steps_count: InputMaybe<IntFilter>;
+  checksum: InputMaybe<StringFilter>;
+  finished_at: InputMaybe<DatetimeFilter>;
+  id: InputMaybe<StringFilter>;
+  logs: InputMaybe<StringFilter>;
+  migration_name: InputMaybe<StringFilter>;
+  nodeId: InputMaybe<IdFilter>;
+  rolled_back_at: InputMaybe<DatetimeFilter>;
+  started_at: InputMaybe<DatetimeFilter>;
 };
 
 export type _Prisma_MigrationsInsertInput = {
-  applied_steps_count?: InputMaybe<Scalars['Int']>;
-  checksum?: InputMaybe<Scalars['String']>;
-  finished_at?: InputMaybe<Scalars['Datetime']>;
-  id?: InputMaybe<Scalars['String']>;
-  logs?: InputMaybe<Scalars['String']>;
-  migration_name?: InputMaybe<Scalars['String']>;
-  rolled_back_at?: InputMaybe<Scalars['Datetime']>;
-  started_at?: InputMaybe<Scalars['Datetime']>;
+  applied_steps_count: InputMaybe<Scalars['Int']>;
+  checksum: InputMaybe<Scalars['String']>;
+  finished_at: InputMaybe<Scalars['Datetime']>;
+  id: InputMaybe<Scalars['String']>;
+  logs: InputMaybe<Scalars['String']>;
+  migration_name: InputMaybe<Scalars['String']>;
+  rolled_back_at: InputMaybe<Scalars['Datetime']>;
+  started_at: InputMaybe<Scalars['Datetime']>;
 };
 
 export type _Prisma_MigrationsInsertResponse = {
@@ -553,25 +554,25 @@ export type _Prisma_MigrationsInsertResponse = {
 };
 
 export type _Prisma_MigrationsOrderBy = {
-  applied_steps_count?: InputMaybe<OrderByDirection>;
-  checksum?: InputMaybe<OrderByDirection>;
-  finished_at?: InputMaybe<OrderByDirection>;
-  id?: InputMaybe<OrderByDirection>;
-  logs?: InputMaybe<OrderByDirection>;
-  migration_name?: InputMaybe<OrderByDirection>;
-  rolled_back_at?: InputMaybe<OrderByDirection>;
-  started_at?: InputMaybe<OrderByDirection>;
+  applied_steps_count: InputMaybe<OrderByDirection>;
+  checksum: InputMaybe<OrderByDirection>;
+  finished_at: InputMaybe<OrderByDirection>;
+  id: InputMaybe<OrderByDirection>;
+  logs: InputMaybe<OrderByDirection>;
+  migration_name: InputMaybe<OrderByDirection>;
+  rolled_back_at: InputMaybe<OrderByDirection>;
+  started_at: InputMaybe<OrderByDirection>;
 };
 
 export type _Prisma_MigrationsUpdateInput = {
-  applied_steps_count?: InputMaybe<Scalars['Int']>;
-  checksum?: InputMaybe<Scalars['String']>;
-  finished_at?: InputMaybe<Scalars['Datetime']>;
-  id?: InputMaybe<Scalars['String']>;
-  logs?: InputMaybe<Scalars['String']>;
-  migration_name?: InputMaybe<Scalars['String']>;
-  rolled_back_at?: InputMaybe<Scalars['Datetime']>;
-  started_at?: InputMaybe<Scalars['Datetime']>;
+  applied_steps_count: InputMaybe<Scalars['Int']>;
+  checksum: InputMaybe<Scalars['String']>;
+  finished_at: InputMaybe<Scalars['Datetime']>;
+  id: InputMaybe<Scalars['String']>;
+  logs: InputMaybe<Scalars['String']>;
+  migration_name: InputMaybe<Scalars['String']>;
+  rolled_back_at: InputMaybe<Scalars['Datetime']>;
+  started_at: InputMaybe<Scalars['Datetime']>;
 };
 
 export type _Prisma_MigrationsUpdateResponse = {
@@ -587,7 +588,7 @@ export type CreateNoteMutationVariables = Exact<{
 }>;
 
 
-export type CreateNoteMutation = { __typename?: 'Mutation', insertIntoNoteCollection?: { __typename?: 'NoteInsertResponse', affectedCount: number, records: Array<{ __typename?: 'Note', id: string, title: string, body: string }> } | null };
+export type CreateNoteMutation = { __typename?: 'Mutation', insertIntoNoteCollection: { __typename?: 'NoteInsertResponse', affectedCount: number, records: Array<{ __typename?: 'Note', id: any, title: string, body: string }> } | null };
 
 export type DeleteNotesMutationVariables = Exact<{
   ids: Array<Scalars['UUID']> | Scalars['UUID'];
@@ -603,14 +604,14 @@ export type GetNoteByIdQueryVariables = Exact<{
 }>;
 
 
-export type GetNoteByIdQuery = { __typename?: 'Query', noteCollection?: { __typename?: 'NoteConnection', edges: Array<{ __typename?: 'NoteEdge', node: { __typename?: 'Note', id: string, title: string, body: string } }> } | null };
+export type GetNoteByIdQuery = { __typename?: 'Query', noteCollection: { __typename?: 'NoteConnection', edges: Array<{ __typename?: 'NoteEdge', node: { __typename?: 'Note', id: any, title: string, body: string } }> } | null };
 
 export type GetNotesByUserIdQueryVariables = Exact<{
   userId: Scalars['UUID'];
 }>;
 
 
-export type GetNotesByUserIdQuery = { __typename?: 'Query', noteCollection?: { __typename?: 'NoteConnection', edges: Array<{ __typename?: 'NoteEdge', node: { __typename?: 'Note', id: string, title: string, body: string } }> } | null };
+export type GetNotesByUserIdQuery = { __typename?: 'Query', noteCollection: { __typename?: 'NoteConnection', edges: Array<{ __typename?: 'NoteEdge', node: { __typename?: 'Note', id: any, title: string, body: string } }> } | null };
 
 
 export const CreateNoteDocument = gql`
@@ -658,20 +659,25 @@ export const GetNotesByUserIdDocument = gql`
   }
 }
     `;
-export type Requester<C = {}, E = unknown> = <R, V>(doc: DocumentNode, vars?: V, options?: C) => Promise<R> | AsyncIterable<R>
-export function getSdk<C, E>(requester: Requester<C, E>) {
+
+export type SdkFunctionWrapper = <T>(action: (requestHeaders?:Record<string, string>) => Promise<T>, operationName: string, operationType?: string) => Promise<T>;
+
+
+const defaultWrapper: SdkFunctionWrapper = (action, _operationName, _operationType) => action();
+
+export function getSdk(client: GraphQLClient, withWrapper: SdkFunctionWrapper = defaultWrapper) {
   return {
-    CreateNote(variables: CreateNoteMutationVariables, options?: C): Promise<CreateNoteMutation> {
-      return requester<CreateNoteMutation, CreateNoteMutationVariables>(CreateNoteDocument, variables, options) as Promise<CreateNoteMutation>;
+    CreateNote(variables: CreateNoteMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<CreateNoteMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<CreateNoteMutation>(CreateNoteDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'CreateNote', 'mutation');
     },
-    DeleteNotes(variables: DeleteNotesMutationVariables, options?: C): Promise<DeleteNotesMutation> {
-      return requester<DeleteNotesMutation, DeleteNotesMutationVariables>(DeleteNotesDocument, variables, options) as Promise<DeleteNotesMutation>;
+    DeleteNotes(variables: DeleteNotesMutationVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<DeleteNotesMutation> {
+      return withWrapper((wrappedRequestHeaders) => client.request<DeleteNotesMutation>(DeleteNotesDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'DeleteNotes', 'mutation');
     },
-    GetNoteById(variables: GetNoteByIdQueryVariables, options?: C): Promise<GetNoteByIdQuery> {
-      return requester<GetNoteByIdQuery, GetNoteByIdQueryVariables>(GetNoteByIdDocument, variables, options) as Promise<GetNoteByIdQuery>;
+    GetNoteById(variables: GetNoteByIdQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetNoteByIdQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetNoteByIdQuery>(GetNoteByIdDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetNoteById', 'query');
     },
-    GetNotesByUserId(variables: GetNotesByUserIdQueryVariables, options?: C): Promise<GetNotesByUserIdQuery> {
-      return requester<GetNotesByUserIdQuery, GetNotesByUserIdQueryVariables>(GetNotesByUserIdDocument, variables, options) as Promise<GetNotesByUserIdQuery>;
+    GetNotesByUserId(variables: GetNotesByUserIdQueryVariables, requestHeaders?: GraphQLClientRequestHeaders): Promise<GetNotesByUserIdQuery> {
+      return withWrapper((wrappedRequestHeaders) => client.request<GetNotesByUserIdQuery>(GetNotesByUserIdDocument, variables, {...requestHeaders, ...wrappedRequestHeaders}), 'GetNotesByUserId', 'query');
     }
   };
 }

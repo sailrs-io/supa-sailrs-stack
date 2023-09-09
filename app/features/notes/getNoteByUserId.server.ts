@@ -1,5 +1,3 @@
-import type { GetNoteByIdQuery } from "~/integrations/graphql";
-import { GetNoteByIdDocument } from "~/integrations/graphql";
 import { client } from "~/integrations/graphql/client";
 
 type GetNoteByUserIdArgs = {
@@ -8,12 +6,8 @@ type GetNoteByUserIdArgs = {
 };
 
 export async function getNoteByUserId(args: GetNoteByUserIdArgs) {
-  const { data } = await client.query<GetNoteByIdQuery>({
-    query: GetNoteByIdDocument,
-    variables: {
-      ...args,
-    },
-    fetchPolicy: "no-cache",
+  const result = await client.GetNoteById({
+    ...args,
   });
-  return data?.noteCollection?.edges[0]?.node;
+  return result?.noteCollection?.edges[0]?.node;
 }
